@@ -2,7 +2,7 @@ FROM ubuntu:trusty
 MAINTAINER Jalel Hazbri "jalel.hazbri@gmail.com"
 
 ENV MYSQL_USER=mjhazbri
-ENV MYSQL_PASS=mjhazbri
+ENV MYSQL_PASSWORD=mjhazbri
 ENV MYSQL_DATABASE=mjhazbri
 
 # Install packages: mysql adds a root user with no password

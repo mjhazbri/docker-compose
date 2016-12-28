@@ -9,8 +9,8 @@ StartMySQL ()
 
 CreateMySQLUser()
 {
-    echo ".......................... () Creating MySQL user ${MYSQL_USER} with ${MYSQL_PASS} password ......"
-    mysql -uroot -e "CREATE USER '${MYSQL_USER}'@'%' IDENTIFIED BY '${MYSQL_PASS}'"
+    echo ".......................... () Creating MySQL user ${MYSQL_USER} with ${MYSQL_PASSWORD} password ......"
+    mysql -uroot -e "CREATE USER '${MYSQL_USER}'@'%' IDENTIFIED BY '${MYSQL_PASSWORD}'"
     mysql -uroot -e "GRANT ALL PRIVILEGES ON *.* TO '${MYSQL_USER}'@'%' WITH GRANT OPTION"
     echo "=> Done!"
     echo "========================================================================"
