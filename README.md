@@ -1,2 +1,2 @@
 # docker-compose : 
-this project is about the compose of wildfly and mysql.
+this project is about the creation of wildfly and mysql serber.
