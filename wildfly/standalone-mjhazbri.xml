@@ -319,9 +319,6 @@
             <mail-session name="default" jndi-name="java:jboss/mail/Default">
                 <smtp-server outbound-socket-binding-ref="mail-smtp"/>
             </mail-session>
-            <mail-session name="MailService" jndi-name="java:jboss/mail/MailService" from="notification@docapost.fr">
-                <smtp-server outbound-socket-binding-ref="mail-smtp" username="${smtp.username}" password="${smtp.password}"/>
-            </mail-session>
         </subsystem>
         <subsystem xmlns="urn:jboss:domain:naming:2.0">
             <remote-naming/>
@@ -362,15 +359,6 @@
                     <authorization>
                         <policy-module code="Delegating" flag="required"/>
                     </authorization>
-                </security-domain>
-				<security-domain name="mockAuthentication" cache-type="default">
-                    <authentication>
-                        <login-module code="Database" flag="required">
-                            <module-option name="dsJndiName" value="java:jboss/datasources/UsersDS"/>
-                            <module-option name="principalsQuery" value="SELECT u.password FROM credentials u WHERE u.login = ?"/>
-                            <module-option name="rolesQuery" value="SELECT 'USER_ROLE', 'USER_ROLE' FROM credentials u WHERE u.login = ?"/>
-                        </login-module>
-                    </authentication>
                 </security-domain>
             </security-domains>
         </subsystem>
